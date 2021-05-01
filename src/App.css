@@ -37,7 +37,6 @@ body {
 .title {
   text-align: center;
   padding: 1.5rem;
-  background: #ccc;
 }
 
 .title h3 {
@@ -46,4 +45,45 @@ body {
 
 .title p {
   font-size: 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
+}
+
+.card {
+  background: #0096c7;
+  color: #fff;
+  height: 300px;
+}
+
+.card h2 {
+  background: #023e8a;
+  font-size: 1.75rem;
+  color: #fff;
+  text-align: center;
+  padding: 0.75rem;
+}
+
+.text-wrap {
+  font-size: 1.75rem;
+  padding: 3rem 0;
+  margin: 0 3rem;
+}
+
+.text-wrap p {
+  margin: 1rem 0;
+}
+
+.text-wrap span {
+  margin-left: 1rem;
 }
