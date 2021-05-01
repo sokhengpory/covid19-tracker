@@ -1,4 +1,4 @@
-import React from 'react';
+import { Fragment } from 'react';
 import moment from 'moment';
 import Spinner from './Spinner';
 
@@ -9,15 +9,16 @@ const Cards = (props) => {
     TotalConfirmed,
     TotalDeaths,
     Date,
-  } = props.globalDatas;
+    Country,
+  } = props.country;
 
   if (props.loading) {
     return <Spinner />;
   } else {
     return (
-      <div className="container">
+      <Fragment>
         <div className="title">
-          <h3>Global</h3>
+          <h3>{!Country ? 'Global' : props.country.Country}</h3>
           <p>{moment(Date).format('MMMM Do YYYY, h:mm a')}</p>
         </div>
         <div className="cards">
@@ -44,7 +45,7 @@ const Cards = (props) => {
             </div>
           </div>
         </div>
-      </div>
+      </Fragment>
     );
   }
 };
