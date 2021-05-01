@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import Navbar from './components/Navbar';
-import Title from './components/Title';
 import Cards from './components/Cards';
 
 class App extends Component {
   state = {
     globalDatas: {},
+    loading: false,
   };
 
   componentDidMount() {
@@ -15,16 +15,19 @@ class App extends Component {
   }
 
   getGlobal = async () => {
+    this.setState({ loading: true });
     const res = await axios.get('https://api.covid19api.com/summary');
     this.setState({ globalDatas: res.data.Global });
+    this.setState({ loading: false });
   };
 
   render() {
+    const { globalDatas, loading } = this.state;
+
     return (
       <div className="App">
         <Navbar />
-        <Title globalDatas={this.state.globalDatas} />
-        <Cards globalDatas={this.state.globalDatas} />
+        <Cards globalDatas={globalDatas} loading={loading} />
       </div>
     );
   }
