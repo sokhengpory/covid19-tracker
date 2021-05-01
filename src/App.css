@@ -33,3 +33,17 @@ body {
 .navbar a:hover {
   color: #77e2ff;
 }
+
+.title {
+  text-align: center;
+  padding: 1.5rem;
+  background: #ccc;
+}
+
+.title h3 {
+  font-size: 2.75rem;
+}
+
+.title p {
+  font-size: 1.5rem;
+}
