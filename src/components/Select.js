@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import SelectOption from './SelectOption';
+import { useState } from 'react';
 
 const Select = (props) => {
   const [text, setText] = useState('Global');
