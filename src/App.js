@@ -4,6 +4,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Cards from './components/Cards';
 import Select from './components/Select';
+import Footer from './components/Footer';
 
 class App extends Component {
   state = {
@@ -42,6 +43,7 @@ class App extends Component {
           <Cards loading={loading} country={country} />
           <Select countries={countries} getCountry={this.getCountry} />
         </div>
+        <Footer />
       </div>
     );
   }

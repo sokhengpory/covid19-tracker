@@ -10,6 +10,7 @@ body {
   font-size: 1rem;
   background-color: #fff;
   color: #333;
+  height: 100vh;
 }
 
 .navbar {
@@ -36,7 +37,7 @@ body {
 
 .title {
   text-align: center;
-  padding: 1.5rem;
+  padding: 2rem;
 }
 
 .title h3 {
@@ -58,6 +59,7 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 3rem;
+  margin-top: 2rem;
 }
 
 .card {
@@ -97,4 +99,18 @@ body {
   padding: 0.5rem 1rem;
   font-size: 1.1rem;
   outline: none;
+}
+
+footer {
+  background: #023e8a;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem;
+}
+
+footer .text {
+  color: #79c3f8;
 }
