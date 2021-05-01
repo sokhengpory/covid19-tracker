@@ -87,3 +87,14 @@ body {
 .text-wrap span {
   margin-left: 1rem;
 }
+
+.form {
+  margin: 2rem 0;
+}
+
+.form select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  outline: none;
+}

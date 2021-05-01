@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 const Select = (props) => {
-  const [text, setText] = useState('Global');
+  const [text, setText] = useState('');
 
   const handleChange = (e) => {
     setText(e.target.value);
@@ -10,7 +10,7 @@ const Select = (props) => {
 
   return (
     <div>
-      <form>
+      <form className="form">
         <select value={text} onChange={handleChange}>
           <option value="Global">Global</option>
           {props.countries.map((country) => (
