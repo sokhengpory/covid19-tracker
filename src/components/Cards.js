@@ -6,8 +6,8 @@ const Cards = (props) => {
     NewDeaths,
     TotalConfirmed,
     TotalDeaths,
-    Date,
   } = props.globalDatas;
+
   return (
     <div className="container">
       <div className="cards">

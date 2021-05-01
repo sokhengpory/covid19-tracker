@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <div className="App">
         <Navbar />
-        <Title />
+        <Title globalDatas={this.state.globalDatas} />
         <Cards globalDatas={this.state.globalDatas} />
       </div>
     );

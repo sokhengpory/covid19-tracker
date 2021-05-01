@@ -1,10 +1,12 @@
 import React from 'react';
+import moment from 'moment';
 
-const Title = () => {
+const Title = (props) => {
+  const { Date } = props.globalDatas;
   return (
     <div className="title">
       <h3>Global</h3>
-      <p>Friday 24th 2021, 8:30pm</p>
+      <p>{moment(Date).format('MMMM Do YYYY, h:mm a')}</p>
     </div>
   );
 };
