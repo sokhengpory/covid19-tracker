@@ -12,6 +12,7 @@ class App extends Component {
     countryData: [],
     country: {},
     loading: false,
+    globalData: {},
   };
 
   componentDidMount() {
@@ -22,15 +23,20 @@ class App extends Component {
     this.setState({ loading: true });
     const res = await axios.get('https://api.covid19api.com/summary');
     this.setState({ country: res.data.Global });
+    this.setState({ globalData: res.data.Global });
     this.setState({ countries: res.data.Countries });
     this.setState({ loading: false });
   };
 
   getCountry = (code) => {
-    const country = this.state.countries.find(
-      (country) => country.CountryCode === code
-    );
-    this.setState({ country: country });
+    if (code === 'Global') {
+      this.setState({ country: this.state.globalData });
+    } else {
+      const country = this.state.countries.find(
+        (country) => country.CountryCode === code
+      );
+      this.setState({ country: country });
+    }
   };
 
   render() {
