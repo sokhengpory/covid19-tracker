@@ -12,6 +12,10 @@ const Cards = (props) => {
     Country,
   } = props.country;
 
+  function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
   if (props.loading) {
     return <Spinner />;
   } else {
@@ -26,10 +30,10 @@ const Cards = (props) => {
             <h2>Cases</h2>
             <div className="text-wrap">
               <p>
-                New Case: <span>{NewConfirmed}</span>
+                New Case: <span>{numberWithCommas(NewConfirmed)}</span>
               </p>
               <p>
-                Total Case: <span>{TotalConfirmed}</span>
+                Total Case: <span>{numberWithCommas(TotalConfirmed)}</span>
               </p>
             </div>
           </div>
@@ -37,10 +41,10 @@ const Cards = (props) => {
             <h2>Deaths</h2>
             <div className="text-wrap">
               <p>
-                New Death: <span>{NewDeaths}</span>
+                New Death: <span>{numberWithCommas(NewDeaths)}</span>
               </p>
               <p>
-                Total Death: <span>{TotalDeaths}</span>
+                Total Death: <span>{numberWithCommas(TotalDeaths)}</span>
               </p>
             </div>
           </div>
