@@ -13,6 +13,7 @@ const Cards = (props) => {
   } = props.country;
 
   function numberWithCommas(x) {
+    if (!x) return 0;
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   }
 
@@ -22,7 +23,7 @@ const Cards = (props) => {
     return (
       <Fragment>
         <div className="title">
-          <h3>{!Country ? 'Global' : props.country.Country}</h3>
+          <h3>{!Country ? 'Global' : Country}</h3>
           <p>{moment(Date).format('MMMM Do YYYY, h:mm a')}</p>
         </div>
         <div className="cards">
