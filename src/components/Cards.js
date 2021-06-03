@@ -1,6 +1,6 @@
-import { Fragment } from 'react';
-import moment from 'moment';
-import Spinner from './Spinner';
+import { Fragment } from "react";
+import moment from "moment";
+import Spinner from "./Spinner";
 
 const Cards = (props) => {
   const {
@@ -14,17 +14,20 @@ const Cards = (props) => {
 
   function numberWithCommas(x) {
     if (!x) return 0;
-    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
-
+  
+  // for the loading screen it better to have it own function like. it good not to mix it with the render JSX
+  // if(props.loading) return <Spinner /> 
+  
   if (props.loading) {
     return <Spinner />;
   } else {
     return (
       <Fragment>
         <div className="title">
-          <h3>{!Country ? 'Global' : Country}</h3>
-          <p>{moment(Date).format('MMMM Do YYYY, h:mm a')}</p>
+          <h3>{!Country ? "Global" : Country}</h3>
+          <p>{moment(Date).format("MMMM Do YYYY, h:mm a")}</p>
         </div>
         <div className="cards">
           <div className="card">
