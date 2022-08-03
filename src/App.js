@@ -45,7 +45,6 @@ function App() {
         <Cards loading={loading} country={country} />
         <Select countries={countries} getCountry={getCountry} />
       </div>
-      {/* <Footer /> */}
     </div>
   );
 }
